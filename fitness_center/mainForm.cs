@@ -8,7 +8,7 @@ namespace fitness_center
 {
     public partial class mainForm : Form
     {
-        private string connectionString = "server=localhost;user=root;password=root;database=fitness;";
+        private string connectionString = "server=localhost;user=root;password=root;database=mydb;";
         private MySqlConnection connection;
 
         public mainForm()
@@ -21,7 +21,7 @@ namespace fitness_center
 
         private void clients_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            currentQuery = "SELECT client_id AS 'id', client_name AS 'ФИО', client_number AS 'Номер телефона', ticket_start AS 'Начало абонемента', ticket_end AS 'Дата окончания абонемента', tickets_ticket_id AS 'Тип абонемента' FROM clients";
+            currentQuery = "SELECT * FROM mydb.guest";
             LoadData(currentQuery);
         }
 
